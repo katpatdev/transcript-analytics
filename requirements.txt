@@ -1,0 +1,10 @@
+flask
+requests
+python-dotenv
+transformers
+torch
+# For sentence splitting in NLP
+nltk
+pytest
+pytest-mock
+gunicorn

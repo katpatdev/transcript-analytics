@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+app/__init__.py
+tests/test_analytics.py
+transcript_analytics.egg-info/PKG-INFO
+transcript_analytics.egg-info/SOURCES.txt
+transcript_analytics.egg-info/dependency_links.txt
+transcript_analytics.egg-info/top_level.txt

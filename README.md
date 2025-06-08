@@ -2,31 +2,31 @@
 
 ## 1. Project Overview
 
-[cite_start]This service provides analytical insights into financial earnings call transcripts. [cite: 1] [cite_start]It exposes a Flask-based REST API that fetches a specific transcript from the Benzinga API using a `call_id` [cite: 4][cite_start], processes its content using various Hugging Face NLP models [cite: 3][cite_start], and returns a structured JSON response with sentiment analysis and key phrase extraction. 
+This service provides analytical insights into financial earnings call transcripts. [cite: 1] It exposes a Flask-based REST API that fetches a specific transcript from the Benzinga API using a `call_id` [cite: 4], processes its content using various Hugging Face NLP models [cite: 3], and returns a structured JSON response with sentiment analysis and key phrase extraction. 
 
 The project includes two primary endpoints:
 * A **standard endpoint** (`/analytics`) for fast, general-purpose analysis.
 * An **advanced endpoint** (`/analytics_advanced`) that uses more powerful, specialized models for deeper and more context-aware financial insights.
 
-[cite_start]The entire application is containerized with Docker for easy setup, portability, and deployment. 
+The entire application is containerized with Docker for easy setup, portability, and deployment. 
 
 ## 2. Features
 
-* [cite_start]**Benzinga API Integration**: Fetches earnings call transcript data by `call_id`. 
+* **Benzinga API Integration**: Fetches earnings call transcript data by `call_id`. 
 * **Dual Analytics Endpoints**: Offers both standard and advanced analytics options.
 * **Overall Sentiment Analysis**: Provides a top-level sentiment score (Positive/Negative/Neutral) for the transcript.
-* [cite_start]**Granular Sentiment Analysis**: Breaks down the transcript into sentences or larger contextual chunks and analyzes the sentiment of each part. 
-* [cite_start]**Key Phrase Extraction**: Uses Named Entity Recognition (NER) to identify important entities like companies, people, products, and dates. 
-* [cite_start]**Containerized Environment**: Includes a `Dockerfile` for building a self-contained image, ensuring the environment is consistent and easy to run anywhere. 
+* **Granular Sentiment Analysis**: Breaks down the transcript into sentences or larger contextual chunks and analyzes the sentiment of each part. 
+* **Key Phrase Extraction**: Uses Named Entity Recognition (NER) to identify important entities like companies, people, products, and dates. 
+* **Containerized Environment**: Includes a `Dockerfile` for building a self-contained image, ensuring the environment is consistent and easy to run anywhere. 
 * **Robust Testing**: Comes with a suite of unit tests using `pytest` to verify error handling and application logic.
 
 ## 3. Technologies Used
 
-* [cite_start]**Language**: Python 
-* [cite_start]**Framework**: Flask 
-* [cite_start]**NLP**: Hugging Face Transformers, NLTK
+* **Language**: Python 
+* **Framework**: Flask 
+* **NLP**: Hugging Face Transformers, NLTK
 * **API Interaction**: Requests
-* [cite_start]**Containerization**: Docker 
+* **Containerization**: Docker 
 * **Testing**: Pytest, Pytest-Mock
 
 ## 4. Final Project Structure
@@ -129,7 +129,7 @@ The service provides two `GET` endpoints to perform analysis.
 
 ### Finding a `call_id`
 
-[cite_start]You can find new `call_id`s to test with by using the Benzinga API endpoint that lists recent calls.  Example for Microsoft (`MSFT`):
+You can find new `call_id`s to test with by using the Benzinga API endpoint that lists recent calls.  Example for Microsoft (`MSFT`):
 ```bash
 curl "[https://api.benzinga.com/api/v1/transcripts/calls?token=bz.4UVNCRP4JNVT5E22S77QZWA4PMATWZRJ&page_size=5&symbol=MSFT](https://api.benzinga.com/api/v1/transcripts/calls?token=bz.4UVNCRP4JNVT5E22S77QZWA4PMATWZRJ&page_size=5&symbol=MSFT)"
 ```

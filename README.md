@@ -2,7 +2,7 @@
 
 ## 1. Project Overview
 
-This service provides analytical insights into financial earnings call transcripts. [cite: 1] It exposes a Flask-based REST API that fetches a specific transcript from the Benzinga API using a `call_id` [cite: 4], processes its content using various Hugging Face NLP models [cite: 3], and returns a structured JSON response with sentiment analysis and key phrase extraction. 
+This service provides analytical insights into financial earnings call transcripts.It exposes a Flask-based REST API that fetches a specific transcript from the Benzinga API using a `call_id`, processes its content using various Hugging Face NLP models, and returns a structured JSON response with sentiment analysis and key phrase extraction. 
 
 The project includes two primary endpoints:
 * A **standard endpoint** (`/analytics`) for fast, general-purpose analysis.
@@ -126,16 +126,6 @@ This method is recommended for quickly running the application in a stable, isol
 ## 6. API Usage
 
 The service provides two `GET` endpoints to perform analysis.
-
-### Finding a `call_id`
-
-You can find new `call_id`s to test with by using the Benzinga API endpoint that lists recent calls.  Example for Microsoft (`MSFT`):
-```bash
-curl "[https://api.benzinga.com/api/v1/transcripts/calls?token=bz.4UVNCRP4JNVT5E22S77QZWA4PMATWZRJ&page_size=5&symbol=MSFT](https://api.benzinga.com/api/v1/transcripts/calls?token=bz.4UVNCRP4JNVT5E22S77QZWA4PMATWZRJ&page_size=5&symbol=MSFT)"
-```
-Copy the value from the `"call_id"` field in the response.
-
----
 
 ### Endpoint 1: Standard Analytics
 
